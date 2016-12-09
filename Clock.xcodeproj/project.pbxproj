@@ -10,6 +10,9 @@
 		8FB70CD81DFA9FD50009CBF9 /* Clock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB70CCE1DFA9FD50009CBF9 /* Clock.framework */; };
 		8FB70CDD1DFA9FD50009CBF9 /* ClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB70CDC1DFA9FD50009CBF9 /* ClockTests.swift */; };
 		8FB70CDF1DFA9FD50009CBF9 /* Clock.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FB70CD11DFA9FD50009CBF9 /* Clock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FB70CE91DFAA00A0009CBF9 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB70CE81DFAA00A0009CBF9 /* Clock.swift */; };
+		8FB70D171DFAB6110009CBF9 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 8FB70D161DFAB6110009CBF9 /* Cartfile */; };
+		8FB70D1A1DFAB7CC0009CBF9 /* Calendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB70D191DFAB7CC0009CBF9 /* Calendar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		8FB70CD71DFA9FD50009CBF9 /* ClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB70CDC1DFA9FD50009CBF9 /* ClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockTests.swift; sourceTree = "<group>"; };
 		8FB70CDE1DFA9FD50009CBF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FB70CE81DFAA00A0009CBF9 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		8FB70D161DFAB6110009CBF9 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		8FB70D191DFAB7CC0009CBF9 /* Calendar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Calendar.framework; path = Carthage/Build/iOS/Calendar.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB70D1A1DFAB7CC0009CBF9 /* Calendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,9 +60,11 @@
 		8FB70CC41DFA9FD40009CBF9 = {
 			isa = PBXGroup;
 			children = (
+				8FB70D161DFAB6110009CBF9 /* Cartfile */,
 				8FB70CD01DFA9FD50009CBF9 /* Clock */,
 				8FB70CDB1DFA9FD50009CBF9 /* ClockTests */,
 				8FB70CCF1DFA9FD50009CBF9 /* Products */,
+				8FB70D181DFAB7CB0009CBF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				8FB70CD11DFA9FD50009CBF9 /* Clock.h */,
+				8FB70CE81DFAA00A0009CBF9 /* Clock.swift */,
 				8FB70CD21DFA9FD50009CBF9 /* Info.plist */,
 			);
 			path = Clock;
@@ -84,6 +94,14 @@
 				8FB70CDE1DFA9FD50009CBF9 /* Info.plist */,
 			);
 			path = ClockTests;
+			sourceTree = "<group>";
+		};
+		8FB70D181DFAB7CB0009CBF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FB70D191DFAB7CC0009CBF9 /* Calendar.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +143,7 @@
 				8FB70CD31DFA9FD50009CBF9 /* Sources */,
 				8FB70CD41DFA9FD50009CBF9 /* Frameworks */,
 				8FB70CD51DFA9FD50009CBF9 /* Resources */,
+				8FB70D1C1DFAB9B80009CBF9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -149,6 +168,7 @@
 					8FB70CCD1DFA9FD40009CBF9 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 9HQR3Y4WE5;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					8FB70CD61DFA9FD50009CBF9 = {
@@ -181,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB70D171DFAB6110009CBF9 /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,11 +214,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8FB70D1C1DFAB9B80009CBF9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Calendar.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8FB70CC91DFA9FD40009CBF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB70CE91DFAA00A0009CBF9 /* Clock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,18 +361,24 @@
 		8FB70CE31DFA9FD50009CBF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9HQR3Y4WE5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Clock/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.Clock";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,12 +386,17 @@
 		8FB70CE41DFA9FD50009CBF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9HQR3Y4WE5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Clock/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -360,7 +410,12 @@
 		8FB70CE61DFA9FD50009CBF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9HQR3Y4WE5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ClockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.ClockTests";
@@ -372,7 +427,12 @@
 		8FB70CE71DFA9FD50009CBF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9HQR3Y4WE5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ClockTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.ClockTests";

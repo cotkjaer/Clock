@@ -9,27 +9,37 @@
 import XCTest
 @testable import Clock
 
-class ClockTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+class ClockTests: XCTestCase
+{
+    func test_second()
+    {
+        var runCounter = 0
+        let target = 3
+        
+        let expectation = self.expectation(description: "Got to \(target)")
+        
+        let clock = Clock(unit: .second) {
+            
+            runCounter += 1
+            
+            if runCounter > target { expectation.fulfill() }
+        }
+        
+        XCTAssertEqual(runCounter, 0)
+        XCTAssertEqual(clock.running, false)
+        
+        clock.start()
+        
+        XCTAssertEqual(runCounter, 0)
+        XCTAssertEqual(clock.running, true)
+        
+        waitForExpectations(timeout: Double(1 + target)) { e in
+            
+            if let error = e
+            {
+                XCTFail("Error: \(error.localizedDescription)")
+                print("Error: \(error.localizedDescription)")
+            }
         }
     }
     

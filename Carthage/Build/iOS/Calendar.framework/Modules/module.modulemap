@@ -1,0 +1,10 @@
+framework module Calendar {
+  umbrella header "Calendar.h"
+
+  export *
+  module * { export * }
+}
+
+module Calendar.Swift {
+    header "Calendar-Swift.h"
+}

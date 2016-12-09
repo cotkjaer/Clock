@@ -9,13 +9,13 @@
 import Foundation
 import Calendar
 
-private let debugFormatter: DateFormatter =
-    {
-        let df = DateFormatter()
-        df.timeStyle = .full
-        df.dateStyle = .none
-        return df
-}()
+//private let debugFormatter: DateFormatter =
+//    {
+//        let df = DateFormatter()
+//        df.timeStyle = .full
+//        df.dateStyle = .none
+//        return df
+//}()
 
 open class Clock
 {
@@ -60,25 +60,23 @@ open class Clock
     {
         unscheduleTimer()
         
-        if let date = calendar.next(unit)
-        {
-            debugPrint("nextdate for \(debugFormatter.string(from: Date())) -> \(debugFormatter.string(from: date))")
-            
-            let timer = Timer(fireAt: date, interval: 0, target: self, selector: #selector(Clock.handleTimer), userInfo: nil, repeats: false)
-            
-            RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
-            
-            self.timer = timer
-        }
-        else
+        guard let date = calendar.next(unit) else
         {
             debugPrint("Could not create next date")
+            return
         }
+        
+        let timer = Timer(fireAt: date, interval: 0, target: self, selector: #selector(Clock.handleTimer), userInfo: nil, repeats: false)
+        
+        RunLoop.main.add(timer, forMode: .commonModes)
+        
+        self.timer = timer
     }
     
     @objc fileprivate func handleTimer()
     {
         scheduleTimer()
-        closure()
+        
+        DispatchQueue.main.async(execute: closure)
     }
 }
