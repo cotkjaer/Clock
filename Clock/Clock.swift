@@ -9,14 +9,6 @@
 import Foundation
 import Calendar
 
-//private let debugFormatter: DateFormatter =
-//    {
-//        let df = DateFormatter()
-//        df.timeStyle = .full
-//        df.dateStyle = .none
-//        return df
-//}()
-
 open class Clock
 {
     fileprivate let calendar = Calendar.autoupdatingCurrent

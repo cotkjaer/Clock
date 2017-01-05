@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u0Y-TQ-i7f">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Countdown-->
+        <scene sceneID="WKX-Kh-DDW">
+            <objects>
+                <viewController id="Zlz-0J-vpm" customClass="CountdownViewController" customModule="ClockDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LeW-mB-cPt"/>
+                        <viewControllerLayoutGuide type="bottom" id="GbL-nP-Gmi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CoL-9b-i4M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDO-b6-YhP">
+                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdV-eA-e4w">
+                                <rect key="frame" x="289" y="540" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bdV-eA-e4w" secondAttribute="height" multiplier="1:1" id="LRW-qX-xMh"/>
+                                </constraints>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stop" destination="Zlz-0J-vpm" eventType="touchUpInside" id="ubl-jU-Wgi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIv-gd-x2d">
+                                <rect key="frame" x="16" y="540" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AIv-gd-x2d" secondAttribute="height" multiplier="1:1" id="xDM-5J-Tbp"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="start" destination="Zlz-0J-vpm" eventType="touchUpInside" id="Wgf-QE-Wf3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJZ-do-sAQ">
+                                <rect key="frame" x="153" y="540" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NJZ-do-sAQ" secondAttribute="height" multiplier="1:1" id="GA0-mT-yBF"/>
+                                    <constraint firstAttribute="width" constant="70" id="pSV-zG-P36"/>
+                                </constraints>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset" destination="Zlz-0J-vpm" eventType="touchUpInside" id="WID-6O-FjF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GbL-nP-Gmi" firstAttribute="top" secondItem="AIv-gd-x2d" secondAttribute="bottom" constant="8" symbolic="YES" id="0wV-za-Dsy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bdV-eA-e4w" secondAttribute="trailing" id="3pR-aK-0TV"/>
+                            <constraint firstItem="NJZ-do-sAQ" firstAttribute="width" secondItem="AIv-gd-x2d" secondAttribute="width" id="4PB-ef-dUn"/>
+                            <constraint firstItem="AIv-gd-x2d" firstAttribute="leading" secondItem="CoL-9b-i4M" secondAttribute="leadingMargin" id="F9Z-Uj-p4Z"/>
+                            <constraint firstItem="GbL-nP-Gmi" firstAttribute="top" secondItem="bdV-eA-e4w" secondAttribute="bottom" constant="8" symbolic="YES" id="Kzs-2T-dKK"/>
+                            <constraint firstItem="NJZ-do-sAQ" firstAttribute="centerX" secondItem="CoL-9b-i4M" secondAttribute="centerX" id="M70-QF-jMF"/>
+                            <constraint firstItem="UDO-b6-YhP" firstAttribute="centerY" secondItem="CoL-9b-i4M" secondAttribute="centerY" id="Yg8-ba-nVV"/>
+                            <constraint firstItem="bdV-eA-e4w" firstAttribute="width" secondItem="NJZ-do-sAQ" secondAttribute="width" id="dyK-Y9-Qe3"/>
+                            <constraint firstItem="GbL-nP-Gmi" firstAttribute="top" secondItem="NJZ-do-sAQ" secondAttribute="bottom" constant="8" symbolic="YES" id="f0H-08-LA4"/>
+                            <constraint firstItem="UDO-b6-YhP" firstAttribute="centerX" secondItem="CoL-9b-i4M" secondAttribute="centerX" id="wCB-ba-c6N"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Countdown" id="QoA-9E-rMF"/>
+                    <connections>
+                        <outlet property="label" destination="UDO-b6-YhP" id="Yhs-cY-JnK"/>
+                        <outlet property="resetButton" destination="NJZ-do-sAQ" id="2AX-u5-dy2"/>
+                        <outlet property="startButton" destination="AIv-gd-x2d" id="FgK-fZ-dUS"/>
+                        <outlet property="stopButton" destination="bdV-eA-e4w" id="WdF-oZ-Pdt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lhZ-z7-3Q0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="349"/>
+        </scene>
+        <!--Clock-->
+        <scene sceneID="c1g-3k-no3">
+            <objects>
+                <viewController id="KAu-cp-lEZ" customClass="ClockViewController" customModule="ClockDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m5B-DK-XFw"/>
+                        <viewControllerLayoutGuide type="bottom" id="hNU-Wx-3Pb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UGM-do-Egu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Clock" id="d4U-45-qcW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8iG-Sk-H2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="-305"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dC3-eD-Tjq">
+            <objects>
+                <tabBarController id="u0Y-TQ-i7f" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Jzj-zs-N0q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="KAu-cp-lEZ" kind="relationship" relationship="viewControllers" id="UwX-0P-g75"/>
+                        <segue destination="Zlz-0J-vpm" kind="relationship" relationship="viewControllers" id="uNx-ct-0R9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rfc-ss-hxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-348" y="22"/>
+        </scene>
+    </scenes>
+</document>
