@@ -24,8 +24,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDO-b6-YhP">
-                                <rect key="frame" x="166" y="323" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="-44" y="217" width="462" height="234"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="196"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -127,11 +127,98 @@
                     <connections>
                         <segue destination="KAu-cp-lEZ" kind="relationship" relationship="viewControllers" id="UwX-0P-g75"/>
                         <segue destination="Zlz-0J-vpm" kind="relationship" relationship="viewControllers" id="uNx-ct-0R9"/>
+                        <segue destination="dC4-wi-f66" kind="relationship" relationship="viewControllers" id="aFo-Sa-4rU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rfc-ss-hxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-348" y="22"/>
+        </scene>
+        <!--Stopwatch-->
+        <scene sceneID="Ztf-kS-8Ot">
+            <objects>
+                <viewController id="dC4-wi-f66" customClass="StopwatchViewController" customModule="ClockDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aPs-GE-LT0"/>
+                        <viewControllerLayoutGuide type="bottom" id="bBq-5k-iyi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AWC-X7-h3h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0P-hh-JQs">
+                                <rect key="frame" x="16" y="257" width="343" height="154"/>
+                                <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="128"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqN-qe-ixR">
+                                <rect key="frame" x="289" y="540" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jqN-qe-ixR" secondAttribute="height" multiplier="1:1" id="dNC-c3-p7L"/>
+                                </constraints>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stop" destination="dC4-wi-f66" eventType="touchUpInside" id="pHV-OC-d4f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="is4-9l-Eva">
+                                <rect key="frame" x="16" y="540" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="is4-9l-Eva" secondAttribute="height" multiplier="1:1" id="bTU-h4-mac"/>
+                                </constraints>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="start" destination="dC4-wi-f66" eventType="touchUpInside" id="Vcz-E7-lkb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aB6-Ql-o3D">
+                                <rect key="frame" x="153" y="540" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.0" green="0.68627450980000004" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="aB6-Ql-o3D" secondAttribute="height" multiplier="1:1" id="I5Z-MB-D8X"/>
+                                    <constraint firstAttribute="width" constant="70" id="KiU-l8-q2f"/>
+                                </constraints>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset" destination="dC4-wi-f66" eventType="touchUpInside" id="JfY-Pp-YNX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aB6-Ql-o3D" firstAttribute="width" secondItem="is4-9l-Eva" secondAttribute="width" id="1Ht-ka-Vgu"/>
+                            <constraint firstItem="bBq-5k-iyi" firstAttribute="top" secondItem="aB6-Ql-o3D" secondAttribute="bottom" constant="8" symbolic="YES" id="AAj-p1-H55"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J0P-hh-JQs" secondAttribute="trailing" id="CxB-Fq-Gep"/>
+                            <constraint firstItem="J0P-hh-JQs" firstAttribute="centerY" secondItem="AWC-X7-h3h" secondAttribute="centerY" id="MVe-gr-C8z"/>
+                            <constraint firstItem="aB6-Ql-o3D" firstAttribute="centerX" secondItem="AWC-X7-h3h" secondAttribute="centerX" id="SyF-jc-BRM"/>
+                            <constraint firstItem="is4-9l-Eva" firstAttribute="leading" secondItem="AWC-X7-h3h" secondAttribute="leadingMargin" id="WcQ-Qk-lU0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jqN-qe-ixR" secondAttribute="trailing" id="bBM-kE-WQx"/>
+                            <constraint firstItem="J0P-hh-JQs" firstAttribute="leading" secondItem="AWC-X7-h3h" secondAttribute="leadingMargin" id="iLn-yP-PlW"/>
+                            <constraint firstItem="jqN-qe-ixR" firstAttribute="width" secondItem="aB6-Ql-o3D" secondAttribute="width" id="im4-et-ZIs"/>
+                            <constraint firstItem="bBq-5k-iyi" firstAttribute="top" secondItem="is4-9l-Eva" secondAttribute="bottom" constant="8" symbolic="YES" id="ozg-DZ-VkG"/>
+                            <constraint firstItem="bBq-5k-iyi" firstAttribute="top" secondItem="jqN-qe-ixR" secondAttribute="bottom" constant="8" symbolic="YES" id="qAW-Z3-HLY"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" id="tnm-Zn-C3e"/>
+                    <connections>
+                        <outlet property="label" destination="J0P-hh-JQs" id="Zf5-9T-Iq0"/>
+                        <outlet property="resetButton" destination="aB6-Ql-o3D" id="n4B-lJ-l1r"/>
+                        <outlet property="startButton" destination="is4-9l-Eva" id="fc1-wO-4wf"/>
+                        <outlet property="stopButton" destination="jqN-qe-ixR" id="wNR-yX-piu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oFW-qh-PSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1246" y="349"/>
         </scene>
     </scenes>
 </document>

@@ -1,24 +1,26 @@
 //
-//  CountdownViewController.swift
+//  StopwatchViewController.swift
 //  Clock
 //
-//  Created by Christian Otkjær on 05/01/17.
+//  Created by Christian Otkjær on 06/01/17.
 //  Copyright © 2017 Silverback IT. All rights reserved.
 //
 
 import UIKit
 import Clock
 
-class CountdownViewController: UIViewController
+class StopwatchViewController: UIViewController
 {
     @IBOutlet weak var label: UILabel?
-
-    let countdown = Countdown(seconds: 10)
+    
+    let stopwatch = Stopwatch()
+    var metronome = Metronome(interval: 0.1, closure: { })
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        countdown.delegate = self
+        
+        metronome = Metronome(interval: 0.01, closure: { self.updateUI() })
         
         updateUI()
     }
@@ -28,10 +30,10 @@ class CountdownViewController: UIViewController
         updateLabel()
         updateButtons()
     }
-
+    
     func updateLabel()
     {
-        label?.text = (countdown.seconds - countdown.countedSeconds).description
+        label?.text = String(format: "%.2f", stopwatch.elapsed)
     }
     
     // MARK: - Buttons
@@ -42,11 +44,11 @@ class CountdownViewController: UIViewController
     
     func updateButtons()
     {
-        update(button: startButton, enabled: countdown.canStart())
-
-        update(button: stopButton, enabled: countdown.canStop())
+        update(button: startButton, enabled: !stopwatch.isRunning)
         
-        update(button: resetButton, enabled: countdown.canReset())
+        update(button: stopButton, enabled: stopwatch.isRunning)
+        
+        update(button: resetButton, enabled: stopwatch.isResettable && !stopwatch.isRunning)
     }
     
     func update(button: UIButton, enabled: Bool)
@@ -55,46 +57,24 @@ class CountdownViewController: UIViewController
         
         button.isEnabled = enabled
         button.alpha = enabled ? 1 : 0.25
-        
     }
-
+    
     @IBAction func start()
     {
-        countdown.start()
+        stopwatch.start()
+        metronome.start()
     }
     
     @IBAction func stop()
     {
-        countdown.stop()
+        metronome.stop()
+        stopwatch.stop()
+        updateUI()
     }
     
     @IBAction func reset()
     {
-        countdown.reset()
-    }
-}
-
-// MARK: - CountdownListener
-
-extension CountdownViewController: CountdownDelegate
-{
-    func countdownDidStop(_ countdown: Countdown)
-    {
-        updateUI()
-    }
-    
-    func countdownDidStart(_ countdown: Countdown)
-    {
-        updateUI()
-    }
-    
-    func countdownDidTick(_ countdown: Countdown)
-    {
-        updateUI()
-    }
-    
-    func countdownDidReset(_ countdown: Countdown)
-    {
+        stopwatch.reset()
         updateUI()
     }
 }

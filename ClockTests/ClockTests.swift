@@ -18,7 +18,7 @@ class ClockTests: XCTestCase
         
         let expectation = self.expectation(description: "Got to \(target)")
         
-        let clock = Clock(unit: .second) {
+        let clock = Clock(unit: .second) { _ in
             
             runCounter += 1
             
@@ -26,12 +26,12 @@ class ClockTests: XCTestCase
         }
         
         XCTAssertEqual(runCounter, 0)
-        XCTAssertEqual(clock.running, false)
+        XCTAssertEqual(clock.isRunning, false)
         
         clock.start()
         
         XCTAssertEqual(runCounter, 0)
-        XCTAssertEqual(clock.running, true)
+        XCTAssertEqual(clock.isRunning, true)
         
         waitForExpectations(timeout: Double(1 + target)) { e in
             

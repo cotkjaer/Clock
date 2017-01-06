@@ -9,17 +9,21 @@
 import Foundation
 import Calendar
 
+/// A class for ticking away - invoking a closure on every whole second, minute, or hour
 open class Clock
 {
     fileprivate let calendar = Calendar.autoupdatingCurrent
     
     let unit: Calendar.Component
     
-    let closure : (()->())
+    let closure : ((Date)->())
     
-    fileprivate var timer: Timer?
+    private var timer: Timer?
     
-    public init(unit: Calendar.Component, closure: @escaping ()->())
+    /**
+     Creates a clock that will "tick" on every whole `unit`, and invoke `closure` every time with the tick-date
+ */
+    public init(unit: Calendar.Component = .second, closure: @escaping (Date)->())
     {
         self.unit = unit
         self.closure = closure
@@ -30,7 +34,7 @@ open class Clock
         timer?.invalidate()
     }
     
-    open var running : Bool { return timer?.isValid == true }
+    open var isRunning : Bool { return timer?.isValid == true }
     
     open func start()
     {
@@ -58,7 +62,13 @@ open class Clock
             return
         }
         
-        let timer = Timer(fireAt: date, interval: 0, target: self, selector: #selector(Clock.handleTimer), userInfo: nil, repeats: false)
+        let timer = Timer(fire: date, interval: 0, repeats: false, block: {
+            timer in
+            self.scheduleTimer()
+            DispatchQueue.main.async { self.closure(date) }
+        })
+        
+//        let timer = Timer(fireAt: date, interval: 0, target: self, selector: #selector(Clock.handleTimer), userInfo: nil, repeats: false)
         
         RunLoop.main.add(timer, forMode: .commonModes)
         
@@ -69,6 +79,6 @@ open class Clock
     {
         scheduleTimer()
         
-        DispatchQueue.main.async(execute: closure)
+        DispatchQueue.main.async { self.closure(Date()) }
     }
 }

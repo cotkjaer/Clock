@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F1360FE1E1E91A80064C688 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1360FD1E1E91A80064C688 /* Metronome.swift */; };
+		8F1361001E1E97280064C688 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1360FF1E1E97280064C688 /* Stopwatch.swift */; };
+		8F1361021E1EBCE60064C688 /* StopwatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1361011E1EBCE60064C688 /* StopwatchTests.swift */; };
+		8F1361061E1F8C220064C688 /* MetronomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1361051E1F8C220064C688 /* MetronomeTests.swift */; };
+		8F1361081E1F93A20064C688 /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1361071E1F93A20064C688 /* StopwatchViewController.swift */; };
 		8FA964AD1E1E3A1100DAE6DF /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA964AC1E1E3A1100DAE6DF /* Countdown.swift */; };
 		8FA964B51E1E410B00DAE6DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA964B41E1E410B00DAE6DF /* AppDelegate.swift */; };
 		8FA964B71E1E410B00DAE6DF /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA964B61E1E410B00DAE6DF /* ClockViewController.swift */; };
@@ -59,6 +64,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8F1360FD1E1E91A80064C688 /* Metronome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metronome.swift; sourceTree = "<group>"; };
+		8F1360FF1E1E97280064C688 /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		8F1361011E1EBCE60064C688 /* StopwatchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopwatchTests.swift; sourceTree = "<group>"; };
+		8F1361051E1F8C220064C688 /* MetronomeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomeTests.swift; sourceTree = "<group>"; };
+		8F1361071E1F93A20064C688 /* StopwatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
 		8FA964AC1E1E3A1100DAE6DF /* Countdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		8FA964B21E1E410B00DAE6DF /* ClockDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClockDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA964B41E1E410B00DAE6DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +125,7 @@
 				8FA964B81E1E410B00DAE6DF /* Main.storyboard */,
 				8FA964B61E1E410B00DAE6DF /* ClockViewController.swift */,
 				8FA964C41E1E417000DAE6DF /* CountdownViewController.swift */,
+				8F1361071E1F93A20064C688 /* StopwatchViewController.swift */,
 				8FA964BB1E1E410B00DAE6DF /* Assets.xcassets */,
 				8FA964BD1E1E410B00DAE6DF /* LaunchScreen.storyboard */,
 				8FA964C01E1E410B00DAE6DF /* Info.plist */,
@@ -149,7 +160,9 @@
 			children = (
 				8FB70CD11DFA9FD50009CBF9 /* Clock.h */,
 				8FB70CE81DFAA00A0009CBF9 /* Clock.swift */,
+				8F1360FF1E1E97280064C688 /* Stopwatch.swift */,
 				8FA964AC1E1E3A1100DAE6DF /* Countdown.swift */,
+				8F1360FD1E1E91A80064C688 /* Metronome.swift */,
 				8FB70CD21DFA9FD50009CBF9 /* Info.plist */,
 			);
 			path = Clock;
@@ -159,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				8FB70CDC1DFA9FD50009CBF9 /* ClockTests.swift */,
+				8F1361011E1EBCE60064C688 /* StopwatchTests.swift */,
+				8F1361051E1F8C220064C688 /* MetronomeTests.swift */,
 				8FB70CDE1DFA9FD50009CBF9 /* Info.plist */,
 			);
 			path = ClockTests;
@@ -340,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F1361081E1F93A20064C688 /* StopwatchViewController.swift in Sources */,
 				8FA964C51E1E417100DAE6DF /* CountdownViewController.swift in Sources */,
 				8FA964B71E1E410B00DAE6DF /* ClockViewController.swift in Sources */,
 				8FA964B51E1E410B00DAE6DF /* AppDelegate.swift in Sources */,
@@ -350,8 +366,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F1360FE1E1E91A80064C688 /* Metronome.swift in Sources */,
 				8FB70CE91DFAA00A0009CBF9 /* Clock.swift in Sources */,
 				8FA964AD1E1E3A1100DAE6DF /* Countdown.swift in Sources */,
+				8F1361001E1E97280064C688 /* Stopwatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +377,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F1361061E1F8C220064C688 /* MetronomeTests.swift in Sources */,
 				8FB70CDD1DFA9FD50009CBF9 /* ClockTests.swift in Sources */,
+				8F1361021E1EBCE60064C688 /* StopwatchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
